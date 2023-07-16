@@ -14,6 +14,7 @@ console.log(obj.prop.getFullname()); // Aurelio De Rosa
 var test = obj.prop.getFullname;
 
 console.log(test()); // undefined
+console.log(test); // Función
 
 // "console.log(obj.prop.getFullname())" devuelve "Aurelio De Rosa" porque al preguntarme "¿Quién está ejecutando esto?" la respuesta es la propiedad "prop" del objeto "obj", y el valor de "fullname" en la propiedad "prop" es precisamente "Aurelio De Rosa"
 

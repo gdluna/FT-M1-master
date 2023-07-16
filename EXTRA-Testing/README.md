@@ -98,7 +98,8 @@ JEST es un framework de testing de fácil uso pero a la vez con muchisimas posib
 
 Para comenzar a utilizar JEST basta con:
 
-* Instalar la dependencia: `npm install --save-dev jest`
+* Instalar la dependencia: Antes era así --> `npm install --save-dev jest` 
+* Instalar la dependencia: Ahora basta con ésta --> `npm install -dev jest` (es decir, no se utiliza el --save)
 * Ejecutar `jest` o sino agregar script al package.json:
 
   ```js
