@@ -5,7 +5,7 @@ function primoSiguiente(primoAnterior) {
   let salir = false;
   let auxPrimoSiguiente = primoAnterior;
   while (!salir) {
-    auxPrimoSiguiente ++;
+    auxPrimoSiguiente++;
     let esPrimo = true;
     for (let i = auxPrimoSiguiente; i >= 1; i--) {
       if (auxPrimoSiguiente % i === 0 && i !== auxPrimoSiguiente && i !== 1) {
@@ -17,7 +17,7 @@ function primoSiguiente(primoAnterior) {
       salir = true;
     }
   }
-  return auxPrimoSiguiente
+  return auxPrimoSiguiente;
 }
 
 let nuevoPrimo = primoSiguiente(13);
@@ -31,14 +31,14 @@ function factorear(num) {
   let primo = 2;
   let arrayFactorear = [1];
   do {
-    if (num%primo === 0) {
-      num = num/primo;
+    if (num % primo === 0) {
+      num = num / primo;
       arrayFactorear.push(primo);
     } else {
       primo = primoSiguiente(primo);
       console.log(primo);
     }
-  } while (num>=primo);
+  } while (num >= primo);
   return arrayFactorear;
 }
 
@@ -119,28 +119,22 @@ function selectionSort(array) {
   //  i
   //  j
   //  x
-  // min = 
-  // minPosicion = 
-  // aux = 
-  // index = 
+  // min =
+  // minPosicion =
+  // aux =
+  // index =
 
-  let min = null; // Guarda el valor mínimo del recorrido del array
-  let minPosicion = null; // Guarda la posición donde se encontró el mínimo
   let aux = null; // Variable auxiliar para realizar el intercambio de valores
-  let index = 0; // Posición en la cual se va ubicando el mínimo que se encuentra en cada recorrido
-  for (let i = 0; i < array.length; i++) {
-    index = i;
-    for (let j = i; j < array.length; j++) {
-      if (!min || min > array[j]) {
-        min = array[j];
-        minPosicion = j;
+  for (let i = 0; i < array.length - 1; i++) {
+    let min = i; // Guarda la posición donde se encontró el mínimo
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[min]) {
+        min = j;
       }
     }
-    aux = array[index];
-    array[index] = min;
-    array[minPosicion] = aux;
-    min = null;
-    ;
+    aux = array[i];
+    array[i] = array[min];
+    array[min] = aux;
   }
   return array;
 }
